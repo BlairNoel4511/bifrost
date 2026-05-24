@@ -7,6 +7,7 @@ import { useQueryState } from "nuqs";
 import { useEffect, useMemo } from "react";
 import BigQueryView from "./plugins/bigqueryView";
 import DatadogView from "./plugins/datadogView";
+import KafkaView from "./plugins/kafkaView";
 import MaximView from "./plugins/maximView";
 import NewrelicView from "./plugins/newRelicView";
 import OtelView from "./plugins/otelView";
@@ -56,6 +57,24 @@ const supportedPlatformsList = (resolvedTheme: string): SupportedPlatform[] => [
 		id: "bigquery",
 		name: "BigQuery",
 		icon: <img alt="BigQuery" src="/images/bigquery-logo.svg" width={21} height={21} className="-ml-0.5" />,
+	},
+	{
+		id: "kafka",
+		name: "Kafka",
+		icon: (
+			<svg viewBox="0 0 111.6 112" xmlns="http://www.w3.org/2000/svg" width="19" height="19">
+				<path
+					fill="#231F20"
+					d="M56.2 46.2c-5.2 0-9.5 3.7-10.5 8.6H23.5c-1-7.9-7.8-14.1-15.9-14.1C3.4 40.7 0 44.1 0 48.3v15.4c0 4.2 3.4 7.5 7.6 7.5 8.2 0 14.9-6.1 15.9-14h22.2c1 4.9 5.3 8.6 10.5 8.6 5.9 0 10.7-4.8 10.7-10.7-.1-6-4.9-10.9-10.7-10.9z"
+				/>
+				<path
+					fill="#231F20"
+					d="M104 40.7c-8.2 0-14.9 6.2-15.9 14.1H65.9c-1-4.9-5.3-8.6-10.5-8.6v21.5c5.2 0 9.5-3.7 10.5-8.6h22.2c1 7.9 7.8 14 15.9 14 4.2 0 7.6-3.4 7.6-7.5V48.3c-.1-4.2-3.4-7.6-7.6-7.6z"
+				/>
+				<circle fill="#231F20" cx="56.2" cy="18.4" r="10.7" />
+				<circle fill="#231F20" cx="56.2" cy="93.6" r="10.7" />
+			</svg>
+		),
 	},
 	{
 		id: "newrelic",
@@ -172,6 +191,7 @@ export default function ObservabilityView() {
 				{selectedPluginId === "prometheus" && <PrometheusView />}
 				{selectedPluginId === "otel" && <OtelView />}
 				{selectedPluginId === "maxim" && <MaximView />}
+				{selectedPluginId === "kafka" && <KafkaView />}
 				{selectedPluginId === "datadog" && <DatadogView />}
 				{selectedPluginId === "bigquery" && <BigQueryView />}
 				{selectedPluginId === "newrelic" && <NewrelicView />}
