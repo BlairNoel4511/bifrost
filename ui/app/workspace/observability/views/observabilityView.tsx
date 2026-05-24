@@ -11,6 +11,7 @@ import MaximView from "./plugins/maximView";
 import NewrelicView from "./plugins/newRelicView";
 import OtelView from "./plugins/otelView";
 import PrometheusView from "./plugins/prometheusView";
+import PubSubView from "./plugins/pubsubView";
 
 type SupportedPlatform = {
 	id: string;
@@ -56,6 +57,20 @@ const supportedPlatformsList = (resolvedTheme: string): SupportedPlatform[] => [
 		id: "bigquery",
 		name: "BigQuery",
 		icon: <img alt="BigQuery" src="/images/bigquery-logo.svg" width={21} height={21} className="-ml-0.5" />,
+	},
+	{
+		id: "pubsub",
+		name: "Pub/Sub",
+		icon: (
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={21} height={21} fill="none">
+				<path
+					d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"
+					fill="#4285F4"
+				/>
+				<circle cx="12" cy="12" r="3" fill="#4285F4" />
+				<path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="#4285F4" strokeWidth="2" strokeLinecap="round" />
+			</svg>
+		),
 	},
 	{
 		id: "newrelic",
@@ -174,6 +189,7 @@ export default function ObservabilityView() {
 				{selectedPluginId === "maxim" && <MaximView />}
 				{selectedPluginId === "datadog" && <DatadogView />}
 				{selectedPluginId === "bigquery" && <BigQueryView />}
+				{selectedPluginId === "pubsub" && <PubSubView />}
 				{selectedPluginId === "newrelic" && <NewrelicView />}
 			</div>
 		</div>
