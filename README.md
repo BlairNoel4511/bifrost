@@ -51,7 +51,7 @@ Bifrost is configured via a YAML file. See `config.example.yaml` for a full refe
 ```yaml
 server:
   port: 8080
-  timeout: 30s
+  timeout: 60s  # increased from 30s — some local models can be slow to respond
 
 providers:
   openai:
