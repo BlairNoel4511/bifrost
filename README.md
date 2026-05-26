@@ -63,6 +63,11 @@ providers:
     api_key: "${ANTHROPIC_API_KEY}"
     models:
       - claude-3-5-sonnet-20241022
+  ollama:
+    base_url: "http://localhost:11434"  # personal addition: local Ollama instance
+    models:
+      - llama3.2
+      - mistral
 ```
 
 ## Development
