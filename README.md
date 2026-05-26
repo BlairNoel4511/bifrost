@@ -68,6 +68,7 @@ providers:
     models:
       - llama3.2
       - mistral
+      - phi4  # added: good balance of speed and quality for local use
 ```
 
 ## Development
