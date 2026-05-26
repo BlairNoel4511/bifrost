@@ -120,6 +120,13 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 See [CHANGELOG.md](CHANGELOG.md) for release history.
 
+## Personal Notes
+
+> These are reminders for myself while exploring the codebase.
+
+- The provider retry logic lives in `internal/gateway/retry.go` — worth reading before adding a new provider
+- When testing Ollama locally, make sure the model is already pulled (`ollama pull phi4`) or the first request will time out even at 120s
+
 ## License
 
 MIT — see [LICENSE](LICENSE) for details.
